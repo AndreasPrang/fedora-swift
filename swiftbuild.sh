@@ -1,5 +1,7 @@
 #!/bin/sh
 BUILDROOT=~/tmp/swiftbuild
+
+BRANCH="--branch swift-3.0-branch"
 declare -a SWIFTREPOS=(\
         "https://github.com/apple/swift.git swift" \
         "https://github.com/apple/swift-llvm.git llvm" \
@@ -94,7 +96,7 @@ case "$1" in
     for repo in "${SWIFTREPOS[@]}"; do
       repodir=$BUILDROOT/`echo $repo | cut -d " " -f 2`
       if [ ! -d "$repodir" ] ; then
-        git clone $repo
+        git clone $BRANCH $repo
       fi
     done
 
