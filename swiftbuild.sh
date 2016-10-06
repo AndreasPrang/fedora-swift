@@ -44,6 +44,8 @@ case "$1" in
   ;;
 
 
+
+
   "setup" )  echo "Setup build enviroment"
     sudo yum install -y \
     git \
